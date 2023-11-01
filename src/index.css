@@ -1,0 +1,205 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.card-body1{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(240, 227, 42);
+   
+}
+
+
+.Btn {
+  --hover-shadows: 16px 16px 33px #121212,
+                    -16px -16px 33px #303030;
+  --accent: fuchsia;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 1.1em;
+  background-color: #212121;
+  color: white;
+  padding: 1em 2em;
+  transition: box-shadow ease-in-out 0.3s,
+              background-color ease-in-out 0.1s,
+              letter-spacing ease-in-out 0.1s,
+              transform ease-in-out 0.1s;
+ margin-left: 130px;
+ margin-top: 20px;
+ background-color: rgb(7, 7, 49);
+ width: 60%;
+ }
+ 
+ 
+ 
+ .Btn:active {
+  box-shadow: var(--hover-shadows),
+               var(--accent) 0px 0px 30px 5px;
+  background-color: var(--accent);
+  transform: scale(0.95);
+ }
+
+.navbar{
+  width: 100%;
+  height: 60px;
+  background-color: rgb(7, 7, 49);
+}
+
+.navlist{
+  color: white;
+  text-decoration: none;
+}
+ul li {
+  float: left;
+  margin: 20px;
+}
+
+.stopwatchbutton{
+  width: 20%;
+  height: 10px;
+  
+}
+.stopwatchbuttons{
+  margin-left: 300px;
+  margin-top: 20px;
+  background-color: yellow;
+  margin-right: 300px;
+}
+
+
+
+
+/* CSS */
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #170a57;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 4rem;
+  
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.card-body3{
+  background-color: #08123f;
+  color: white;
+  border-radius: 2px;
+}
+
+.CurrentTime{
+  background-color: #08123f;
+  color: white;
+  border-radius: 2px;
+}
+
+.Btns {
+  text-align: center;
+  margin-top: 2rem;
+  height: 60px;
+  border-radius: 20px;
+
+}
+
+.Btn1 {
+  /* background-color: rgb(160, 189, 243); */
+  border-radius: 4rem;
+  padding: 0.6rem;
+  width: 6rem;
+  font-size: larger;
+ 
+}
+
+.btn1:disabled{
+  display: none;
+}
+
+.btn2:disabled{
+  display: none;
+}
+
+
+.Btn2 {
+  background-color: rgb(211, 211, 211);
+  border-radius: 4rem;
+  margin-left: 14rem;
+  padding: 0.6rem;
+  width: 6rem;
+  font-size: larger;
+}
+
+
