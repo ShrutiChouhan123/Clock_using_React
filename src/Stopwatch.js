@@ -4,13 +4,23 @@ import './App.css'
 const Stopwatch = () => {
     const [time, setTime] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
+    const [reverse, setreverseTime] = useState(true)
 
     useEffect(() => {
         let intervalId;
-        if (isRunning) {
-            intervalId = setInterval(() => setTime(time + 1), 10);
+        if (!reverse) {
+            if (isRunning) {
+                intervalId = setInterval(() => setTime(time - 1), 10);
+                return () => clearInterval(intervalId);
+            }
         }
-        return () => clearInterval(intervalId);
+        else {
+            if (isRunning) {
+                intervalId = setInterval(() => setTime(time + 1), 10);
+                return () => clearInterval(intervalId);
+            }
+        }
+
     }, [isRunning, time]);
 
 
@@ -26,29 +36,54 @@ const Stopwatch = () => {
 
     const reset = () => {
         setTime(0);
+        setreverseTime(true)
     };
+
+    const reverseStop = (i) => {
+        setTime(i)
+        setreverseTime(false)
+    }
     return (
         <div className="stopwatch-container">
             <div class="card" style={{ width: "26rem", border: "1px solid black", marginLeft: "310px", marginTop: "70px", fontSize: "50px" }}>
                 <div class="card-body3">
                     <p className="stopwatchtime" style={{ marginLeft: "100px" }}>
                         {hours}:{minutes.toString().padStart(2, "0")}:
-                        {seconds.toString().padStart(2, "0")}
+                        {seconds.toString().padStart(2, "0")}:
                         {milliseconds.toString().padStart(2, "0")}
                     </p>
-                    
+
                 </div>
             </div>
-            <div className="btn_container">
-            <div className="stopwatchbuttons">
-                        <button className="button-85" onClick={startAndStop}>
-                            {isRunning ? "Stop" : "Start"}
-                        </button>
-                        <button className="button-85"  onClick={reset}>
-                            Reset
-                        </button>
-           </div>
-           </div>
+            <div className="btn_container" >
+                <div className="stopwatchbuttons">
+                    <button className="button-85" onClick={startAndStop}>
+                        {isRunning ? "Stop" : "Start"}
+                    </button>
+                    <button className="button-85" onClick={reset}>
+                        Reset
+                    </button>
+                    <button className="button-85" onClick={() => reverseStop(30000)}>
+                        5 minit
+                    </button>
+                    <button className="button-85" onClick={() => reverseStop(60000)}>
+                        10 minit
+                    </button>
+                    <button className="button-85" onClick={() => reverseStop(90000)}>
+                        15 minit
+                    </button>
+                    <button className="button-85" onClick={() => reverseStop(120000)}>
+                        20 minit
+                    </button>
+                    <button className="button-85" onClick={() => reverseStop(150000)}>
+                        25 minit
+                    </button>
+                    <button className="button-85" onClick={() => reverseStop(180000)}>
+                        30 minit
+                    </button>
+                  
+                </div>
+            </div>
 
         </div>
     );
