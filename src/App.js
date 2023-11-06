@@ -10,10 +10,9 @@ function App() {
   return (
     <>
       <Navbar/>
-
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
-        <Route exact path="/stopwatch" element={<Stopwatch />}></Route>
+        <Route exact path="/stopwatch" element={<Stopwatch />} ></Route>
       </Routes>
     </>
   );
