@@ -1,8 +1,10 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import {render, screen } from '@testing-library/react';
 import Home from './Home';
 import Stopwatch from './Stopwatch';
 import '@testing-library/jest-dom';
 import moment from 'moment-timezone';
+import Navbar from './NavPage';
+import { MemoryRouter } from 'react-router-dom';
 
 test('renders learn react link', () => {
   render(<Home />);
@@ -118,5 +120,14 @@ test('next  page check', () => {
 test('test by id', () => {
   const { getByTestId } = render(<Stopwatch />)
   expect(getByTestId('main')).toBeInTheDocument();
-  })
+})
+
+
+test('test narbar', () => {
+ render(
+  <MemoryRouter>
+    <Navbar/>
+  </MemoryRouter>
+ )
+})
 
