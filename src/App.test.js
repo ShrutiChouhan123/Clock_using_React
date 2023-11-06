@@ -4,9 +4,7 @@ import Stopwatch from './Stopwatch';
 import '@testing-library/jest-dom';
 import moment from 'moment-timezone';
 import Navbar from './NavPage';
-// import App from './App';
 import { MemoryRouter } from 'react-router-dom';
-
 
 test('renders learn react link', () => {
   render(<Home />);
