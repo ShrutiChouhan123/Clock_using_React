@@ -47,7 +47,7 @@ function Home() {
             <div className="card" style={{ width: "60rem", border: "1px solid black", marginLeft: "19px", marginTop: "70px", fontSize: "30px",background:"#08123f"}}>
 
 
-                <div className='card-body1'>
+                <div className='card-body1' data-testid='todo-2'>
                     {displayedTimeZones.map((name) => <button className="Btn" onClick={() => handleTimeZone(name)}>{name}</button>)}
                 </div>
 
@@ -58,13 +58,13 @@ function Home() {
                               onClick={() => handlePageChange(currentPage - 1)} 
                                 disabled={currentPage === 0}
                             >
-                                <i className="fa fa-arrow-circle-left" style={{fontSize:"49px"}}></i>
+                                <i className="fa fa-arrow-circle-left" style={{fontSize:"49px"}} data-testid='previous'></i>
                             </button>
                             <button className='btn2' key="name"  data-testid='page2'
                                 onClick={() => handlePageChange(currentPage + 1)}
                                 disabled={endIndex >= TimeZones.length}
                             >
-                             <i className="fa fa-arrow-circle-right" style={{fontSize:"49px"}}></i>
+                             <i className="fa fa-arrow-circle-right" style={{fontSize:"49px"}} data-testid='next'></i>
 
                             </button>
                         </div>
@@ -74,5 +74,4 @@ function Home() {
         </>
     )
 }
-
 export default Home;

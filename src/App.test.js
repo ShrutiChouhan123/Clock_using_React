@@ -1,16 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import Home from './Home';
-import Test from './Test';
 import Stopwatch from './Stopwatch';
 import '@testing-library/jest-dom';
 import moment from 'moment-timezone';
+
 test('renders learn react link', () => {
   render(<Home />);
   const linkElement = screen.getByTestId('todo-1');
   expect(linkElement).toBeInTheDocument();
 });
-
-
 
 test('Clock test case', () => {
   render(<Home />);
@@ -26,13 +24,6 @@ test('stopwatch test case', () => {
 
 })
 
-// test('renders learn react link', () => {
-//   render(<Stopwatch />);
-//   const Stopbtn = screen.getByTestId('data-testid');
-
-//   expect(Stopbtn).toBeInTheDocument();
-// });
-
 test('renders initial time of 0 seconds', () => {
   const { getByText } = render(<Stopwatch />);
   const timeElement = getByText('0:00:00:00');
@@ -45,14 +36,11 @@ test('renders initial time of 0 seconds', () => {
   expect(start).toBeInTheDocument()
 });
 
-
-
 test('renders initial time of 0 seconds', () => {
   render(<Stopwatch />);
   const reset = screen.getByText('Reset');
   expect(reset).toBe(reset)
 });
-
 
 test('clock', () => {
   render(<Home />)
@@ -62,29 +50,73 @@ test('clock', () => {
 
 
 
-test('page 1',()=>{
-  let { getByTestId } = render(<Home/>)
+test('page 1', () => {
+  let { getByTestId } = render(<Home />)
   expect(getByTestId("page1")).toBeDisabled();
 })
 
-test('page 2',()=>{
-  let { getByTestId } = render(<Home/>)
+test('page 2', () => {
+  let { getByTestId } = render(<Home />)
   expect(getByTestId("page2")).toBeEnabled();
 })
 
-test('check both pages',()=>{
-  let { getByTestId } = render(<Home/>)
-  expect(getByTestId("page2","page2")).not.toBeDisabled();
+test('check both pages', () => {
+  let { getByTestId } = render(<Home />)
+  expect(getByTestId("page2", "page2")).not.toBeDisabled();
 })
 
 const TimeZones = moment.tz.names()
-test('check countries list',()=>{
-  render(<Home/>)
+test('check countries list', () => {
+  render(<Home />)
   expect(TimeZones).toContain("Asia/Kolkata");
 
 })
 
 test('check TimeZones is Availabe or not in our code', () => {
-  render(<Home/>)
+  render(<Home />)
   expect(TimeZones).toBeTruthy();
 });
+
+test('get id test home components', () => {
+  const { getByTestId } = render(<Home />)
+  expect(getByTestId('todo-1')).toBeTruthy()
+})
+
+test('get id test home components', () => {
+  const { getByTestId } = render(<Home />)
+  expect(getByTestId('todo-2')).toBeTruthy()
+})
+
+test('reset button', () => {
+  const { getByTestId } = render(<Stopwatch />)
+  expect(getByTestId('reset')).toBeTruthy();
+})
+
+test('check all buttons in stopwatch', async () => {
+  render(<Stopwatch />)
+  const buttonList = await screen.findAllByRole('button')
+  // console.log(buttonList)
+  expect(buttonList).toHaveLength(8)
+})
+
+test('check all buttons in Home', async () => {
+  render(<Home />)
+  const buttonTimeZones = await screen.findAllByRole('button')
+  expect(buttonTimeZones).toHaveLength(22)
+})
+
+test('previous page check', () => {
+  const { getByTestId } = render(<Home />)
+  expect(getByTestId('previous')).toBeInTheDocument()
+})
+
+test('next  page check', () => {
+  const { getByTestId } = render(<Home />)
+  expect(getByTestId('next')).toBeInTheDocument()
+})
+
+test('test by id', () => {
+  const { getByTestId } = render(<Stopwatch />)
+  expect(getByTestId('main')).toBeInTheDocument();
+  })
+

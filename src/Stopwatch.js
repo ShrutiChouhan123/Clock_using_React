@@ -55,12 +55,12 @@ const Stopwatch = () => {
 
                 </div>
             </div>
-            <div className="btn_container" >
+            <div className="btn_container" data-testid='main' >
                 <div className="stopwatchbuttons">
                     <button className="button-85" onClick={startAndStop} data-testid="button-up">  
                         {isRunning ? "Stop" : "Start"}
                     </button>
-                    <button className="button-85" onClick={reset} >
+                    <button className="button-85" onClick={reset} data-testid='reset' >
                         Reset
                     </button>
                     <button className="button-85" onClick={() => reverseStop(30000)}>

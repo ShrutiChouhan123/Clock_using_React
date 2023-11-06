@@ -5,7 +5,7 @@ import './index.css'
 function Navbar() {
   return (
     <>
-      <div class="navbar">
+      <div class="navbar" data-testid='navbar-id'>
         <ul class="navbarnav">
           <li>
             <Link to="/" class="navlist" data-testid='link'>Home</Link>
