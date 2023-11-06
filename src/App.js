@@ -3,7 +3,7 @@ import Stopwatch from "./Stopwatch";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Navbar from "./Navbar";
-// import { Link } from "react-/router-dom";
+
 
 function App() {
 

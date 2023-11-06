@@ -8,7 +8,7 @@ function Navbar() {
       <div class="navbar">
         <ul class="navbarnav">
           <li>
-            <Link to="/" class="navlist" >Home</Link>
+            <Link to="/" class="navlist" data-testid='link'>Home</Link>
           </li>
           <li>
             <Link to="/stopwatch" class="navlist"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stopwatch" viewBox="0 0 16 16">

@@ -45,9 +45,9 @@ const Stopwatch = () => {
     }
     return (
         <div className="stopwatch-container">
-            <div class="card" style={{ width: "26rem", border: "1px solid black", marginLeft: "310px", marginTop: "70px", fontSize: "50px" }}>
-                <div class="card-body3">
-                    <p className="stopwatchtime" style={{ marginLeft: "100px" }}>
+            <div className="card" style={{ width: "26rem", border: "1px solid black", marginLeft: "310px", marginTop: "70px", fontSize: "50px" }}>
+                <div className="card-body3">
+                    <p className="stopwatchtime" style={{ marginLeft: "100px" }} data-testid='time'>
                         {hours}:{minutes.toString().padStart(2, "0")}:
                         {seconds.toString().padStart(2, "0")}:
                         {milliseconds.toString().padStart(2, "0")}
@@ -57,10 +57,10 @@ const Stopwatch = () => {
             </div>
             <div className="btn_container" >
                 <div className="stopwatchbuttons">
-                    <button className="button-85" onClick={startAndStop}>
+                    <button className="button-85" onClick={startAndStop} data-testid="button-up">  
                         {isRunning ? "Stop" : "Start"}
                     </button>
-                    <button className="button-85" onClick={reset}>
+                    <button className="button-85" onClick={reset} >
                         Reset
                     </button>
                     <button className="button-85" onClick={() => reverseStop(30000)}>
