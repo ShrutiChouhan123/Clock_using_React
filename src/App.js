@@ -2,7 +2,7 @@
 import Stopwatch from "./Stopwatch";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
-import Navbar from "./Navbar";
+import Navbar from "./NavPage";
 
 
 function App() {
